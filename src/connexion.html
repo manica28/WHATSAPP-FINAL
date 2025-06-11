@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web - Connexion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-green-400 to-green-600 h-screen flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-2xl p-8 w-full max-w-md">
+        <div class="text-center mb-8">
+            <i class="fab fa-whatsapp text-6xl text-green-500 mb-4"></i>
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">WhatsApp Web</h1>
+            <p class="text-gray-600">Connectez-vous pour continuer</p>
+        </div>
+        
+        <form id="login-form" class="space-y-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="votre@email.com"
+                >
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Mot de passe</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="••••••••"
+                >
+            </div>
+            
+            <button 
+                type="submit" 
+                class="w-full bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition duration-200 flex items-center justify-center"
+            >
+                <i class="fas fa-sign-in-alt mr-2"></i>
+                Se connecter
+            </button>
+        </form>
+        
+        <div id="login-error" class="hidden mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm">
+        </div>
+        
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">Comptes de test disponibles :</p>
+            <div class="mt-2 space-y-1">
+                <p class="text-xs text-gray-500">awa@example.com - 123456</p>
+                <p class="text-xs text-gray-500">moussa@example.com - 123456</p>
+                <p class="text-xs text-gray-500">fatou@example.com - 123456</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="connexion.js"></script>
+</body>
+</html>
