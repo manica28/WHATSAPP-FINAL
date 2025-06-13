@@ -4,8 +4,6 @@ let tempPhoneNumber = '';
  let authStep = 'phone'; // 'phone' ou 'code'
 
 // Configuration de l'API
-
-
 // Vérification du statut d'authentification
 export function checkAuthStatus() {
     const token = localStorage.getItem('whatsapp_token');
