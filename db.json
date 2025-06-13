@@ -44,7 +44,9 @@
       "isMuted": false,
       "isArchived": false,
       "unreadCount": 0,
-      "isPinned": false
+      "isPinned": false,
+      "isFavorite": false,
+      "isBlocked": false
     },
     {
       "id": "2",
@@ -58,7 +60,9 @@
       "isMuted": false,
       "isArchived": false,
       "unreadCount": 0,
-      "isPinned": true
+      "isPinned": true,
+      "isFavorite": false,
+      "isBlocked": false
     },
     {
       "id": "3",
@@ -72,7 +76,9 @@
       "isMuted": true,
       "isArchived": false,
       "unreadCount": 0,
-      "isPinned": false
+      "isPinned": false,
+      "isFavorite": false,
+      "isBlocked": false
     },
     {
       "id": "4",
@@ -87,7 +93,9 @@
       "isMuted": false,
       "isArchived": false,
       "unreadCount": 0,
-      "isPinned": false
+      "isPinned": false,
+      "isFavorite": false,
+      "isBlocked": false
     }
   ],
   "messages": [
