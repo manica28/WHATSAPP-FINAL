@@ -692,6 +692,8 @@ bg-gray-100 shadow-lg flex flex-col items-center py-6 z-10">
     // Initialiser les événements après le rendu
     initMainAppEvents();
     loadConversations();
+     // Démarrer le polling des nouveaux messages
+    startMessagePolling();
 }
 
 // Initialisation des événements de l'application principale
@@ -1171,8 +1173,20 @@ function stopMessagePolling() {
         pollingInterval = null;
     }
 }
-
-
+function checkForNewMessages() {
+    fetch(`${API_BASE}/messages`)
+        .then(res => res.json())
+        .then(fetchedMessages => {
+            // Si de nouveaux messages sont arrivés, on met à jour l'affichage
+            if (fetchedMessages.length !== messages.length) {
+                messages = fetchedMessages;
+                if (selectedConversation) {
+                    loadConversationMessages(selectedConversation.id);
+                }
+                loadConversations();
+            }
+        });
+}
 // Fonction pour rendre un message individuel - AMÉLIORÉE
 function renderMessage(message, isNew = false, newIndex = 0) {
     const sender = users.find(user => String(user.id) === String(message.senderId));
@@ -1544,11 +1558,11 @@ function openConversation(conversationId) {
     // Charger les messages
     loadConversationMessages(conversationId);
     
-    // Marquer comme lu après 5 secondes pour laisser le temps de voir l'effet vert
+    // Marquer comme lu après 2cgcgvgqzq secondes pour laisser le temps de voir l'effet vert
     setTimeout(() => {
         markConversationAsRead(conversationId);
         saveUserLastSeenMessages();
-    }, 5000);
+    }, 2000);
 }
 // 8. Fonction pour sauvegarder les derniers messages vus
 function saveUserLastSeenMessages() {
